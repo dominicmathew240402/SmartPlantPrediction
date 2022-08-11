@@ -146,28 +146,31 @@ def favicon():
 def api_predict():
     global folder_num
     global folders_list
-    if folder_num >= 1000000:
-            folder_num = 0
-    # check if the post request has the file part
-    if 'files' not in request.files:
-        return {"Error": "No files part found."}
-    # Create a new folder for every new file uploaded,
-    # so that concurrency can be maintained
-    files = request.files.getlist('files')
-    app.config['UPLOAD_FOLDER'] = "./static/test"
-    app.config['UPLOAD_FOLDER'] = app.config['UPLOAD_FOLDER'] + '/predict_' + str(folder_num).rjust(6, "0")
-    if not os.path.exists(app.config['UPLOAD_FOLDER']):
-        os.makedirs(app.config['UPLOAD_FOLDER'])
-        folders_list.append(app.config['UPLOAD_FOLDER'])
-        folder_num += 1
-    for file in files:
-        if file.filename == '':
-            return {"Error": "No Files are Selected!"}
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        else:
-            return {"Error": "Invalid file type! Only PNG, JPEG/JPG files are supported."}
+     if request.method == "GET":
+        return('<form action="/api/predict" method="post"></form')
+    if request.method == "POST":
+        if folder_num >= 1000000:
+                folder_num = 0
+        # check if the post request has the file part
+        if 'files' not in request.files:
+            return {"Error": "No files part found."}
+        # Create a new folder for every new file uploaded,
+        # so that concurrency can be maintained
+        files = request.files.getlist('files')
+        app.config['UPLOAD_FOLDER'] = "./static/test"
+        app.config['UPLOAD_FOLDER'] = app.config['UPLOAD_FOLDER'] + '/predict_' + str(folder_num).rjust(6, "0")
+        if not os.path.exists(app.config['UPLOAD_FOLDER']):
+            os.makedirs(app.config['UPLOAD_FOLDER'])
+            folders_list.append(app.config['UPLOAD_FOLDER'])
+            folder_num += 1
+        for file in files:
+            if file.filename == '':
+                return {"Error": "No Files are Selected!"}
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            else:
+                return {"Error": "Invalid file type! Only PNG, JPEG/JPG files are supported."}
         
     if len(os.listdir(app.config['UPLOAD_FOLDER'])) > 0:
         diseases = predict(app.config['UPLOAD_FOLDER'])
