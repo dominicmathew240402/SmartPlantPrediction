@@ -168,12 +168,10 @@ def api_predict():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         else:
             return {"Error": "Invalid file type! Only PNG, JPEG/JPG files are supported."}
-    try:
-        if len(os.listdir(app.config['UPLOAD_FOLDER'])) > 0:
-            diseases = predict(app.config['UPLOAD_FOLDER'])
-            return diseases
-    except:
-        return {"Error": "Something Went Wrong!"}
+        
+    if len(os.listdir(app.config['UPLOAD_FOLDER'])) > 0:
+        diseases = predict(app.config['UPLOAD_FOLDER'])
+        return diseases
 
 if __name__=='_main_':
     app.run(debug=True)
