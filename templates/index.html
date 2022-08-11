@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} Agent Crop: Home {% endblock %}
+{% block title %} Smart Plant: Home {% endblock %}
 {% block content %}
 	{% with messages = get_flashed_messages() %}  
 		{% if messages %}  
@@ -14,10 +14,10 @@
 	<div class="container px-4 px-md-3">
 		<div class="row align-items-lg-center align-items-md-center">
 			<div class="col-9 mx-auto col-md-6 order-md-4 col-lg-5">
-				<img src="{{ url_for('static', filename='Agent-Crop-1000x1000.png') }}" alt="Agent Crop Logo" height="500" width="500" class="img-fluid">
+				<img src="{{ url_for('static', filename='Smart-Plant-1000x1000.png') }}" alt="Smart Plant Logo" height="500" width="500" class="img-fluid">
 			</div>
 			<div class="col justify-content-center pt-4">
-				<h1 class="mb-3 custom-font">Get Instant & Accurate Crop Disease Detection with Agent Crop</h1>
+				<h1 class="mb-3 custom-font">Get Instant & Accurate Crop Disease Detection with Smart Plant</h1>
 				<div class="mb-0" style="max-width: 300px;">
 					<label for="files" class="form-label">Upload Your Images Here: </label>
 					<input class="form-control" type="file" name="files" accept=".jpg, .png, .jpeg, image/jpeg, image/png" id="files" multiple="true" required>
