@@ -146,8 +146,6 @@ def favicon():
 def api_predict():
     global folder_num
     global folders_list
-    if request.method == "GET":
-        return('<form action="/api/predict" method="post"></form>')
     if request.method == "POST":
         if folder_num >= 1000000:
                 folder_num = 0
