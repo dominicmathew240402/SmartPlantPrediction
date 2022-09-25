@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="./static/img/favicon1.png" type="image/png">
+
+        <!--=============== BOXICONS ===============-->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="./static/css/404.css">
+
+        <title>Smart Plant | 404 Website</title> 
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header">
+            <nav class="nav container">
+                <a href="./index.html" class="nav__logo">
+                    Smart Plant
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="./RealTime.html" class="nav__link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x'></i>
+                    </div>
+                </div>
+
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+            </nav>
+        </header>
+
+        <!--==================== MAIN ====================-->
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home">
+                <div class="home__container container">
+                    <div class="home__data">
+                        <span class="home__subtitle">Error 404</span>
+                        <h1 class="home__title">Hey Buddy</h1>
+                        <p class="home__description">
+                            We can't seem to find the page <br> you are looking for.
+                        </p>
+                        <!--a href="RealTime.html" class="home__button">
+                            Go Home
+                        </a-->
+                        <button onclick="history.back()" class="home__button">
+                            Go Back
+                        </button>
+                    </div>
+
+                    <div class="home__img">
+                        <img src="./static/img/ghost-img.png" alt="">
+                        <div class="home__shadow"></div>
+                    </div>
+                </div>
+
+                <footer class="home__footer">
+                    <span>(60) 01-3925 1290</span>
+                    <span>|</span>
+                    <span>dominicmathew240@gmail.com</span>
+                </footer>
+            </section>
+        </main>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="./static/js/404.js"></script>
+    </body>
+</html>
