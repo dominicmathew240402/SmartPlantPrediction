@@ -28,7 +28,7 @@ filelock==3.4.1
 Flask==2.0.3
 Flask-APScheduler==1.12.4
 flatbuffers==1.12
-fonttools==4.34.4
+fonttools==4.27.1
 gast==0.4.0
 google-auth==2.8.0
 google-auth-oauthlib==0.4.6
