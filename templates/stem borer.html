@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+<header class="navbar navbar-expand-md navbar-dark nav-color fixed-top">
+  <div class="collapse navbar-collapse pt-2 py-md-0" id="bdNavbar">
+    <ul class="navbar-nav flex-grow flex-wrap bd-navbar-nav">
+      <li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="#home">Dashboard</a></li>
+      <li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="./index.html">Disease Detection</a></li>
+      <li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="./FertilizerRecommendation.html">Fertilizer Recommendation</a></li>
+      <li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="./CropRecommendation.html">Crop Recommendation</a></li>
+      <li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="./PesticideRecommendation.html">Pesticide Recommendation</a></li>
+    </ul>
+  </div>
+</header>
+{% endblock %}
+
+{% block body %}
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: black">
+    <b>Identified Pest: <i>stem borer</i></b>
+</h2>
+
+ <section>
+
+        <div class="container">
+            <h3 style="padding: 15px; background-color: rgb(0, 0, 0); color: #c79c60; font-weight: bold;"
+                class="text-center my-3 content-h3">
+                Recommended Products</h3>
+        </div>
+
+<div class="container">
+            <div class="card-columns">
+                <div class="card" style="display:inline-block;">
+                    <div class="card-body text-center card-style">
+                        <img style="border-radius: 5%; margin-left:5%; height:300px; width:300px;"
+                             class="img-fluid" src="static/img/pesticide/stem borer/cartop.jpg" alt="cartop">
+                      <h3 class="card-text">Dose: 1000 ml/Ha</h3>
+                    </div>
+                </div>
+                <div class="card" style="display:inline-block;">
+                    <div class="card-body text-center card-style">
+                        <img style="border-radius: 5%;margin-left:5%; height:300px; width:300px;"
+                             class="img-fluid" src="static/img/pesticide/stem borer/voter.jpg" alt="voter">
+                        <h3 class="card-text">Dose: 24 gm/Ha</h3>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+{% endblock %}
