@@ -3,7 +3,7 @@ anaconda==0.0.1.1
 APScheduler==3.9.1
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
-asgiref==3.5.2
+asgiref==3.4.1
 asttokens==2.0.5
 astunparse==1.6.3
 attrs==21.4.0
