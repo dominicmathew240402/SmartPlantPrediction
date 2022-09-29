@@ -61,4 +61,4 @@ jobs:
           app-name: 'SmartPlantV1'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4E7361919DAB44A3ACFB46BBC0330B42 }}
-        startUpCommand: 'gunicorn --bind=0.0.0.0 --workers=4 startup:app'
+        startUpCommand: 'gunicorn --bind=0.0.0.0 --workers=4 app:app'
