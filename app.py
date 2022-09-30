@@ -92,6 +92,26 @@ def clean():
 
 scheduler.start()
 
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/CropRecommendation.html")
+def crop():
+    return render_template("CropRecommendation.html")
+
+@app.route("/FertilizerRecommendation.html")
+def fertilizer():
+    return render_template("FertilizerRecommendation.html")
+
+@app.route("/PesticideRecommendation.html")
+def pesticide():
+    return render_template("PesticideRecommendation.html")
+
+@app.route("/404.html")
+def error_html():
+    return render_template("404.html")
+
 @app.route('/', methods=['GET','POST'])
 def get_disease():
     global folder_num
@@ -140,7 +160,6 @@ def favicon():
 
 #API requests are handled here
 @app.route('/api/predict', methods=['POST', 'GET'])
-
 def api_predict():
     global folder_num
     global folders_list
@@ -233,25 +252,6 @@ def pred_pest(pest):
     except:
         return 'x'
 
-@app.route("/index.html")
-def index():
-    return render_template("index.html")
-
-@app.route("/CropRecommendation.html")
-def crop():
-    return render_template("CropRecommendation.html")
-
-@app.route("/FertilizerRecommendation.html")
-def fertilizer():
-    return render_template("FertilizerRecommendation.html")
-
-@app.route("/PesticideRecommendation.html")
-def pesticide():
-    return render_template("PesticideRecommendation.html")
-
-@app.route("/404.html")
-def error_html():
-    return render_template("404.html")
 
 @app.route("/predict_pest", methods=['GET', 'POST'])
 def predict_pest():
