@@ -70,7 +70,6 @@ nest-asyncio
 nose
 notebook
 npm
-numpy
 oauthlib
 opencv-python
 opt-einsum
